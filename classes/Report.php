@@ -19,9 +19,8 @@ class report {
         return $data;
     }
 
-    public function get_list_users_and_courses_on_the_page($users) {
+    public function get_list_users_and_courses_on_the_page($users, $perpage) {
         $page = optional_param('page', 0, PARAM_INT);
-        $perpage = 10;
         $data = array_slice($users, $page * $perpage, $perpage);
         return $data;
     }

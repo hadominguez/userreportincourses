@@ -21,7 +21,8 @@ $PAGE->set_heading(get_string('pluginname', 'local_userreportincourses'));
 
 $report = new \local_userreportincourses\Report();
 $data = $report->get_list_all_users_and_courses();
-$datapage = $report->get_list_users_and_courses_on_the_page($data);
+$perpage = 10;
+$datapage = $report->get_list_users_and_courses_on_the_page($data, $perpage);
 $columns = $report->get_columns_table();
 
 if ($dataformat) {
@@ -38,7 +39,7 @@ if ($dataformat) {
 
 echo $OUTPUT->header();
 
-print $OUTPUT->paging_bar(sizeof($data), $page, 10, $url);
+print $OUTPUT->paging_bar(sizeof($data), $page, $perpage, $url);
 echo $OUTPUT->download_dataformat_selector("Download", '/local/userreportincourses/index.php', 'dataformat');
 
 
