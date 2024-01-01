@@ -1,0 +1,22 @@
+<table class="generaltable">
+   <thead>
+      <tr>
+        {{#columns}}
+            <th>{{username}}</th>
+            <th>{{firstname}}</th>
+            <th>{{lastname}}</th>
+            <th>{{course}}</th>
+        {{/columns}}
+      </tr>
+   </thead>
+   <tbody>
+      {{#users}}
+         <tr>
+            <td>{{username}}</td>
+            <td>{{firstname}}</td>
+            <td>{{lastname}}</td>
+            <td>{{course}}</td>
+         </tr>
+      {{/users}}
+   </tbody>
+</table>
